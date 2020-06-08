@@ -21,21 +21,21 @@
             onSubmit = (e) => {
                 e.preventDefault();
                 if (parseInt(this.state.value) === this.state.first * this.state.second){
-                    this.setState = ({
+                    this.setState({
                         first: Math.ceil(Math.random() * 9),
                         second: Math.ceil(Math.random() * 9),
                         value: '',
                         result:'정답'
                     });
                 } else {
-                    this.setState = ({
-                        value: '',
-                        result:'땡'            
+                    this.setState({
+                        result:'땡',
+                        value: ''
                     });
                 }
             };
 
-            onChange = (e)=> { this.setState = ({ value: e.target.value})};
+            onChange = (e)=> { this.setState({ value: e.target.value})};
 
             render() {
                 return (
@@ -50,9 +50,8 @@
                         <div>{this.state.result}</div>
                        
                     </div>
-                )
+                );
             }
-
         }
         
 </script>
